@@ -4,8 +4,12 @@ import { CreateTrainingModal } from 'components/CreateTraining/CreateTrainingMod
 
 export const CreateTraining: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
-  const handleClose = React.useCallback(() => { setIsOpen(false) }, [setIsOpen])
-  const handleOpen = React.useCallback(() => { setIsOpen(true) }, [setIsOpen])
+  const handleClose = React.useCallback(() => {
+    setIsOpen(false)
+  }, [setIsOpen])
+  const handleOpen = React.useCallback(() => {
+    setIsOpen(true)
+  }, [setIsOpen])
   const handleSubmit = React.useCallback(() => '', [])
 
   return (

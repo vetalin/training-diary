@@ -5,7 +5,7 @@ import { MainPage } from 'components/MainPage/MainPage'
 export const App = () => {
   return (
     <S.AppContainer>
-      <MainPage />
+      <MainPage/>
     </S.AppContainer>
   )
 }

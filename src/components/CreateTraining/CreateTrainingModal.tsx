@@ -1,18 +1,21 @@
 import React from 'react'
-import { Dialog, DialogContent, DialogActions, DialogTitle, DialogContentText, Button } from '@material-ui/core'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core'
+import { CreateTrainingForm } from 'components/CreateTraining/CreateTrainingForm/CreateTrainingForm'
 
-interface ICreateTrainingModal {
+interface ICreateTrainingModalProps {
   open: boolean
   handleClose: () => void
   handleSubmit: () => void
 }
 
-export const CreateTrainingModal: React.FC<ICreateTrainingModal> = ({ open, handleClose, handleSubmit }) => {
+export const CreateTrainingModal: React.FC<ICreateTrainingModalProps> = ({ open, handleClose, handleSubmit }) => {
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>Создание тренировки</DialogTitle>
       <DialogContent>
-        <DialogContentText>createForm</DialogContentText>
+        <DialogContentText>
+          <CreateTrainingForm/>
+        </DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color='primary'>Отмена</Button>

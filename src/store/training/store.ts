@@ -1,13 +1,15 @@
 import React from 'react'
-import { observable, action } from 'mobx'
+import { action, observable } from 'mobx'
 
 export class Training {
-  @observable training = ''
+  @observable training = 'lalal'
+
   @action
-  setTraining () {
-    this.training = ''
+  setTraining (newTraining: string) {
+    this.training = newTraining
   }
 }
 
-export const TrainingContext = React.createContext(new Training())
+export const trainingInstance = new Training()
+export const TrainingContext = React.createContext(trainingInstance)
 export const useStoreTraining = () => React.useContext(TrainingContext)
