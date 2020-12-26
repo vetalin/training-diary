@@ -9,5 +9,5 @@ export class Training {
   }
 }
 
-export const TrainingContext = React.createContext({})
+export const TrainingContext = React.createContext(new Training())
 export const useStoreTraining = () => React.useContext(TrainingContext)
