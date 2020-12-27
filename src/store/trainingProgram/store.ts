@@ -8,7 +8,11 @@ export class TrainingProgram {
   setTrainingPrograms (programs: Array<ITrainingProgram>) {
     this.trainingPrograms = programs
   }
-  
+
+  addTrainingProgram (program: ITrainingProgram) {
+    this.trainingPrograms = [...this.trainingPrograms, program]
+  }
+
   constructor () {
     makeAutoObservable(this)
   }
