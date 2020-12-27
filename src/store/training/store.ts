@@ -1,15 +1,17 @@
 import React from 'react'
-import { action, observable } from 'mobx'
+import { makeAutoObservable } from 'mobx'
 
 export class Training {
-  @observable training = 'lalal'
+  training = 'lalal'
 
-  @action
   setTraining (newTraining: string) {
     this.training = newTraining
   }
+
+  constructor () {
+    makeAutoObservable(this)
+  }
 }
 
-export const trainingInstance = new Training()
-export const TrainingContext = React.createContext(trainingInstance)
+export const TrainingContext = React.createContext(new Training())
 export const useStoreTraining = () => React.useContext(TrainingContext)

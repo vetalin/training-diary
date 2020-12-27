@@ -4,7 +4,7 @@ import { useStoreTraining } from 'store/training/store'
 import { observer } from 'mobx-react'
 import { Button } from '@material-ui/core'
 
-export const CreateTrainingForm = observer(({}) => {
+export const CreateTrainingForm = observer(() => {
   const storeTraining = useStoreTraining()
 
   return (
