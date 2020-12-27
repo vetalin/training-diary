@@ -14,7 +14,7 @@ export const CreateTraining: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Button variant="contained" color="primary" onClick={handleOpen}>Создать тренировку</Button>
+      <Button variant="contained" onClick={handleOpen}>Создать тренировку</Button>
       <CreateTrainingModal
         open={isOpen}
         handleClose={handleClose}
