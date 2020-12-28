@@ -15,6 +15,7 @@
 - Итоги после выполнения программы тренировок
 - Замеры тела, веса и результатов в начале программы и в конце. Развернутый анализ результатов
 - Тянуть данные через Firebase
+- Средний пульс на тренировке
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
