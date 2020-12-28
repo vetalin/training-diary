@@ -18,9 +18,10 @@ import * as S from './CreatingTraininProgram.styled'
 
 export interface ICreateTrainingProgramProps {
   isOpened: boolean
+  closeDialog: () => void
 }
 
-export const CreateTrainingProgram = observer(({ isOpened }: ICreateTrainingProgramProps) => {
+export const CreateTrainingProgram = observer(({ isOpened, closeDialog }: ICreateTrainingProgramProps) => {
   const trainingProgramsStore = useStoreTrainingProgram()
 
   const [name, setName] = React.useState('')
@@ -34,7 +35,8 @@ export const CreateTrainingProgram = observer(({ isOpened }: ICreateTrainingProg
       description,
       imageUrl,
       trainings
-    }, trainingProgramsStore.addTrainingProgram)
+    }, (trainingProgram) => trainingProgramsStore.addTrainingProgram(trainingProgram))
+    closeDialog()
   }, [name, description, imageUrl, trainings, trainingProgramsStore])
 
   const selectTraining = React.useCallback((event: any) => {
@@ -43,7 +45,7 @@ export const CreateTrainingProgram = observer(({ isOpened }: ICreateTrainingProg
 
   return (
     <React.Fragment>
-      <Dialog open={isOpened}>
+      <Dialog open={isOpened} onBackdropClick={closeDialog}>
         <DialogTitle>Создание программы</DialogTitle>
         <DialogContent>
           <S.FormElement>
@@ -66,7 +68,7 @@ export const CreateTrainingProgram = observer(({ isOpened }: ICreateTrainingProg
           </S.FormElement>
         </DialogContent>
         <DialogActions>
-          <Button>Отмена</Button>
+          <Button color={'secondary'} onClick={closeDialog}>Отмена</Button>
           <Button color={'primary'} onClick={addTrainingProgram}>Создать</Button>
         </DialogActions>
       </Dialog>
